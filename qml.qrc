@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MainPage.qml</file>
+        <file>Images/sheet_covered.png</file>
+        <file>Images/sheet.png</file>
+        <file>Images/left_hovered.png</file>
+        <file>Images/left.png</file>
+        <file>Images/right.png</file>
+    </qresource>
+</RCC>
