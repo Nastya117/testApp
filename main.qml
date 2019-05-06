@@ -4,8 +4,6 @@ import QtQuick.Controls 2.5
 
 Window {
     visible: true
-    width: parent.width
-    height: parent.height
 
     StackView
     {

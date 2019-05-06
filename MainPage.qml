@@ -32,6 +32,7 @@ Rectangle
             model: 9
             delegate: Image
             {
+                z: -index
                 width: 120
                 height: view.height
                 source: ((index == view.currentIndex) ? "Images/sheet_covered.png" : "Images/sheet.png")
@@ -53,13 +54,41 @@ Rectangle
         }
 
 
-        Text
+        Item
         {
+            width: childrenRect.width
+            height: parent.height
             x: parent.width * 0.5 - width * 0.5
             y: {(!listOn) ? parent.height * 0.5 - height * 0.5 : parent.height}
-            text: "Text Cell"
-            font.pointSize: 30
-            color: "white"
+
+            MouseArea
+            {
+                id: textButton
+                width: 80
+                height: parent.height
+                Text
+                {
+                    anchors.centerIn: parent
+                    text: "Text"
+                    font.pointSize: 30
+                    color: "white"
+                }
+            }
+
+            MouseArea
+            {
+                id: cellButton
+                x: textButton.width
+                width: 80
+                height: parent.height
+                Text
+                {
+                    anchors.centerIn: parent
+                    text: "Cell"
+                    font.pointSize: 30
+                    color: "white"
+                }
+            }
 
             Behavior on y
             {
