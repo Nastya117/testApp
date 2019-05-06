@@ -10,7 +10,7 @@ Rectangle
     Rectangle
     {
         width: parent.width
-        height: parent.height * 0.1
+        height: 70
         anchors.bottom: parent.bottom
 
         color: "gray"
@@ -18,11 +18,11 @@ Rectangle
         ListView
         {
             id: view
-            width: parent.width * 0.65
+            width: parent.width - 100
             height: parent.height
-            x: {(listOn) ? parent.width * 0.2 : -width * 1.5}
+            x: {(listOn) ? 50 : -width * 1.5}
             orientation: ListView.Horizontal
-            spacing: -view.width * 0.07
+            spacing: -16
 
             Behavior on x
             {
@@ -32,7 +32,7 @@ Rectangle
             model: 9
             delegate: Image
             {
-                width: view.width * 0.5
+                width: 120
                 height: view.height
                 source: ((index == view.currentIndex) ? "Images/sheet_covered.png" : "Images/sheet.png")
                 MouseArea
@@ -69,7 +69,7 @@ Rectangle
 
         Image
         {
-            width: parent.width * 0.2
+            width: 50
             height: parent.height
             source: {(listOn) ? "Images/left.png" : "Images/left_hovered.png"}
 
@@ -85,7 +85,7 @@ Rectangle
 
         Image
         {
-            width: parent.width * 0.15
+            width: 50
             height: parent.height
             source: "Images/right.png"
             x: {(listOn) ? parent.width - width : parent.width}
